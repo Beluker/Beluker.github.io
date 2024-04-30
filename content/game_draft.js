@@ -32,10 +32,10 @@ class Camera {
         this.position.y = this.parent.position.y - this.body.y;
     }
     draw(){
-        c.globalAlpha = 0.2;
-        c.fillStyle = "aquamarine"
-        c.fillRect(this.position.x, this.position.y, this.body.x, this.body.y);
-        c.globalAlpha = 1;
+        // c.globalAlpha = 0.2;
+        // c.fillStyle = "aquamarine"
+        // c.fillRect(this.position.x, this.position.y, this.body.x, this.body.y);
+        // c.globalAlpha = 1;
     }
     pan(direction){
         //direction = "up" | "down" | "left" | "right"
@@ -91,11 +91,11 @@ class Player {
         };
     }
     draw(){
-        c.globalAlpha = 0.2;
-        c.fillStyle = "goldenrod";
-        c.beginPath();
-        c.arc( this.position.x + this.body.x / 2, this.position.y + this.body.y / 2, (h - this.position.y)  / 10, 0, Math.PI * 2, false);
-        c.fill();
+        // c.globalAlpha = 0.2;
+        // c.fillStyle = "goldenrod";
+        // c.beginPath();
+        // c.arc( this.position.x + this.body.x / 2, this.position.y + this.body.y / 2, (h - this.position.y)  / 10, 0, Math.PI * 2, false);
+        // c.fill();
         c.globalAlpha = 1;
         c.fillStyle = "salmon";
         c.fillRect (
@@ -201,8 +201,8 @@ function step(){
     c.fillRect(translated_offset.x, 0, w, h);
     c.drawImage(image, 0, 0, image.width, image.height, -2000, 0, 4000, h);
 
-    c.fillStyle = "black";
-    c.fillRect(200, 100, 30, 55);
+    // c.fillStyle = "black";
+    // c.fillRect(200, 100, 30, 55);
 
     player.step();
     camera.step();
