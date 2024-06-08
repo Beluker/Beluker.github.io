@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Input Manager Hacks</title>
+    <style>
+        .title#primary {
+            font-size: 24px;
+            font-family: didot;
+            text-align: center;
+        }
+        .title#secondary {
+            font-family: didot;
+            font-size: 16px;
+            text-align: center;
+        }
+        .subtitle {
+            margin-left: 8px;
+            font-family: arial;
+            font-size: 14px;
+        }
+        .content {
+            margin-left: 32px;
+            font-size: 10px;
+            font-family: arial;
+            line-height: 16px;
+            margin-bottom: 32px;
+        }
+        code {
+            font-size: 8px;
+            color: white;
+            background-color: #333;
+            padding: 1px;
+            border-radius: 4px;
+        }
+        term {
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            font-family: didot;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main title -->
+    <p class="title" id="primary">Input Manager Hacks</p>
+    <p class="title" id="secondary">the basics</p>
+    <!-- Sub Title -->
+    <p class="subtitle">Access:</p>
+    <div class="content">
+        <p>
+            To access the <code>Input Manager</code>, you must declare <code>window.game = this</code> at the last constructor in the index.js file.<br> 
+            The <code>Input Manager</code> can then be accessed with <code>game.inputManager</code>.
+        </p>
+    </div>
+    <p class="subtitle">Use:</p>
+    <div class="content">
+        <p>
+            The <code>Input Manager</code> has many functions, but perhaps the most useful is <code>handleLongPress(<i>e</i>)</code>.<br>
+            The function is accessed through <code>game.inputManager.handleLongPress(<i>e</i>)</code>, and it takes a single parameter (called <i>e</i> for learning purposes).
+            <i>e</i> is an integer, in milliseconds, that tells the function how long the player has been charging a boost.<br>For example:<br>
+            &emsp;<code>game.inputManager.handleLongPress(5000)</code> executes the actions that would occur if the player had been charging their boost for 5000 milliseconds (or 5 seconds). 
+            If you called this exact function while playing as an orca you would instantly use your grab ability.
+        </p>
+    </div>
+    <p class="subtitle">Automation:</p>
+    <div class="content">
+        
+    </div>
+</body>
+</html>
