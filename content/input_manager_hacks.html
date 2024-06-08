@@ -34,6 +34,35 @@
             padding: 1px;
             border-radius: 4px;
         }
+        .content .indent {
+            margin-top: 24px;
+            margin-left: 96px;
+            margin-bottom: 24px;
+        }
+        .greyback {
+            border-radius: 8px;
+            padding: 12px;
+            background-color: #333;
+            width: fit-content;
+        }
+        int {
+            color: rgb(124, 245, 162);
+        }
+        key {
+            color: rgb(80, 200, 210);
+        }
+        comment {
+            color: rgb(44, 178, 44);
+        }
+        global {
+            color: rgb(216, 210, 82); 
+        }
+        struct {
+            color: rgb(176, 100, 248);
+        }
+        def {
+            color: rgb(140, 194, 255);
+        }
     </style>
 </head>
 <body>
@@ -54,13 +83,53 @@
             The <code>Input Manager</code> has many functions, but perhaps the most useful is <code>handleLongPress(<i>e</i>)</code>.<br>
             The function is accessed through <code>game.inputManager.handleLongPress(<i>e</i>)</code>, and it takes a single parameter (called <i>e</i> for learning purposes).
             <i>e</i> is an integer, in milliseconds, that tells the function how long the player has been charging a boost.<br>For example:<br>
-            &emsp;<code>game.inputManager.handleLongPress(5000)</code> executes the actions that would occur if the player had been charging their boost for 5000 milliseconds (or 5 seconds). 
+            <div class="indent">
+                <code>game.inputManager.handleLongPress(5000)</code> executes the actions that would occur if the player had been charging their boost for 5000 milliseconds (or 5 seconds). 
             If you called this exact function while playing as an orca you would instantly use your grab ability.
+            </div>
         </p>
     </div>
     <p class="subtitle">Automation:</p>
     <div class="content">
-
+        To execute multiple <code>Long Presses</code>, you can simply put them together inside of an <code>async function</code> as it allows you to use the global <code>setTimeout()</code> function. 
+        A <code>setTimeout()</code> function allows you to execute code after a delay has passed. 
+        It takes 2 parameters, a function and then an integer. 
+        The function contains the code you want to execute, and the integer specifies how many milliseconds of delay will pass before the function is executed.
+        <div class="greyback indent">
+            <code>
+                <global>setTimeout</global><struct>(()</struct><key>=></key><struct>{</struct><br>
+                &emsp;&emsp;<key>game</key>.<def>inputManager</def>.<def>handleLongPress</def><struct>(</struct><int>500</int><struct>)</struct>;<br>
+                <struct>}</struct>, <int>1000</int><struct>)</struct>;
+            </code>
+        </div>
+        When you run the above example, you will wait for 1000 milliseconds before charging 500 milliseconds. 
+        Putting it all together we can create a pretty powerful Beaked Whale hack:
+        <div class="greyback indent">
+            <code>
+                <!-- <key>const</key> <def>cool_down</def> = <int>100</int>;<br><br> -->
+                <key>async function</key> <def>beaked_whale</def><struct>(){</struct><br>
+                    &emsp;&emsp;<comment>//use echo ability</comment><br>
+                    &emsp;&emsp;<global>setTimeout</global><struct>(()</struct><key>=></key><struct>{</struct><br>
+                        &emsp;&emsp;&emsp;&emsp;<key>game</key>.<def>inputManager</def>.<def>handleLongPress</def><struct>(</struct><int>350</int><struct>)</struct>;<br>
+                    &emsp;&emsp;<struct>}</struct>, <int>0</int><struct>)</struct>;<br>
+                    <br>
+                    &emsp;&emsp;<comment>//fire a bubble</comment><br>
+                    &emsp;&emsp;<global>setTimeout</global><struct>(()</struct><key>=></key><struct>{</struct><br>
+                        &emsp;&emsp;&emsp;&emsp;<key>game</key>.<def>inputManager</def>.<def>handleLongPress</def><struct>(</struct><int>1000</int><struct>)</struct>;<br>
+                    &emsp;&emsp;<struct>}</struct>, <int>100</int><struct>)</struct>;<br>
+                    <br>
+                    &emsp;&emsp;<comment>//fire a bubble</comment><br>
+                    &emsp;&emsp;<global>setTimeout</global><struct>(()</struct><key>=></key><struct>{</struct><br>
+                        &emsp;&emsp;&emsp;&emsp;<key>game</key>.<def>inputManager</def>.<def>handleLongPress</def><struct>(</struct><int>1000</int><struct>)</struct>;<br>
+                    &emsp;&emsp;<struct>}</struct>, <int>150</int><struct>)</struct>;<br>
+                    <br>
+                    &emsp;&emsp;<comment>//use echo ability</comment><br>
+                    &emsp;&emsp;<global>setTimeout</global><struct>(()</struct><key>=></key><struct>{</struct><br>
+                        &emsp;&emsp;&emsp;&emsp;<key>game</key>.<def>inputManager</def>.<def>handleLongPress</def><struct>(</struct><int>350</int><struct>)</struct>;<br>
+                    &emsp;&emsp;<struct>}</struct>, <int>200</int><struct>)</struct>;<br>
+                <struct>}</struct>
+            </code>
+        </div>
     </div>
 </body>
 </html>
