@@ -152,15 +152,35 @@
             </code>
         </div>
     </div>
-    <a href="beaked_whale.js" download="beaked_whale.js">
-        <button class="download" onclick="rickRoll()">full JS file</button>
-    </a>
+    <button class="download" onclick="rickRoll()">full JS file</button>
     <script>
-        function rickRoll(){
-            window.open('https://www.youtube.com/watch?v=xvFZjo5PgG0');
-            alert(`Please continue to bask in Rick's aura, failure to comply will result in the lead poisoning of 12 orphans`);
+        async function downloadFile(url, fileName) {
+            await fetch(url, { method: 'get', mode: 'no-cors', referrerPolicy: 'no-referrer' })
+                .then(res => res.blob())
+                .then(res => {
+                    const aElement = document.createElement('a');
+                    aElement.setAttribute('download', fileName);
+                    const href = URL.createObjectURL(res);
+                    aElement.href = href;
+                    aElement.setAttribute('target', '_blank');
+                    aElement.click();
+                    URL.revokeObjectURL(href);
+                });
+        };
+        async function check_for_confirmation(){
+            var umm = confirm("Please increase your device's volume");
+            if (!umm){
+                alert('Failed to comply with company policy. Please follow the guidelines if you wish to download the file');
+            }
+            if(umm) {
+                await downloadFile('beaked_whale.js', `i love Rick's gripperz.js`);
+                window.open('https://www.youtube.com/watch?v=xvFZjo5PgG0');
+                alert(`Please continue to bask in Rick's aura, failure to comply will result in the lead poisoning of 12 orphans`);
+            }
         }
-        console.log(document.referrer);
+        function rickRoll(){
+            check_for_confirmation();
+        }
     </script>
 </body>
 </html>
