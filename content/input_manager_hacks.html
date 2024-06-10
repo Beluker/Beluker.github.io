@@ -63,6 +63,27 @@
         def {
             color: rgb(140, 194, 255);
         }
+        .download {
+            background-color: #333;
+            border: 2px solid;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 4px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            font-family: monospace;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+        .download:hover {
+            border: 2px solid;
+            border-color: #333;
+            color: #333;
+            background-color: white;
+        }
     </style>
 </head>
 <body>
@@ -131,5 +152,14 @@
             </code>
         </div>
     </div>
+    <a href="beaked_whale.js" download="beaked_whale.js">
+        <button class="download" onclick="rickRoll()">full JS file</button>
+    </a>
+    <script>
+        function rickRoll(){
+            window.open('https://www.youtube.com/watch?v=xvFZjo5PgG0');
+            alert(`Please continue to bask in Rick's aura, failure to comply will result in the lead poisoning of 12 orphans`);
+        }
+    </script>
 </body>
 </html>
