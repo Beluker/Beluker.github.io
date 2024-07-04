@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=2">
+    <title>Bedrock Addons</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+    <link rel="manifest" href="../images/site.webmanifest">
+    <style>
+        .title#primary {
+            font-size: 36px;
+            font-family: didot;
+            text-align: center;
+        }
+        .title#secondary {
+            font-family: didot;
+            font-size: 24px;
+            text-align: center;
+        }
+        .subtitle {
+            margin-left: 12px;
+            font-family: arial;
+            font-size: 22px;
+        }
+        .content {
+            margin-left: 48px;
+            font-size: 14px;
+            font-family: arial;
+            line-height: 16px;
+            margin-bottom: 32px;
+        }
+        code {
+            font-size: 12px;
+            color: white;
+            background-color: #333;
+            padding: 1px;
+            border-radius: 4px;
+        }
+        .content .indent {
+            margin-top: 24px;
+            margin-left: 96px;
+            margin-bottom: 24px;
+        }
+        .greyback {
+            border-radius: 8px;
+            padding: 12px;
+            background-color: #333;
+            width: fit-content;
+        }
+        int {
+            color: rgb(124, 245, 162);
+        }
+        key {
+            color: rgb(80, 200, 210);
+        }
+        comment {
+            color: rgb(44, 178, 44);
+        }
+        global {
+            color: rgb(216, 210, 82); 
+        }
+        struct {
+            color: rgb(176, 100, 248);
+        }
+        def {
+            color: rgb(140, 194, 255);
+        }
+        .download {
+            background-color: #333;
+            border: 2px solid;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 4px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            font-family: monospace;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+        .download:hover {
+            border: 2px solid;
+            border-color: #333;
+            color: #333;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main title -->
+    <p class="title" id="primary">Minecraft Bedrock / Education Edition Addons</p>
+    <p class="title" id="secondary">it's not a virus</p>
+    <!-- Sub Title -->
+    <p class="subtitle">Rice Addon:</p>
+    <div class="content">
+        Go into <code>Creative</code> mode and get yourself <code>Rice Spawn Eggs</code>. Once satisfied with the amount of rice you have spawned, go into <code>Survival</code> mode, and attempt to eat as much <code>Rice</code> as you can.
+    </div>
+    <p class="subtitle">Installation:</p>
+    <div class="content">
+        Uncompress the <code>ZIP</code> file and you shall find a <code>Resource Pack</code> and a <code>Behavior Pack</code>. Import both of these into Minecraft and enable them.
+    </div>
+    <button class="download" onclick="rickRoll()">ZIP file download</button>
+    <script>
+        async function downloadFile(url, fileName) {
+            await fetch(url, { method: 'get', mode: 'no-cors', referrerPolicy: 'no-referrer' })
+                .then(res => res.blob())
+                .then(res => {
+                    const aElement = document.createElement('a');
+                    aElement.setAttribute('download', fileName);
+                    const href = URL.createObjectURL(res);
+                    aElement.href = href;
+                    aElement.setAttribute('target', '_blank');
+                    aElement.click();
+                    URL.revokeObjectURL(href);4
+                });
+        };
+        async function check_for_confirmation(){
+            var umm = confirm("Please increase your device's volume");
+            if (!umm){
+                alert('Failed to comply with company policy. Please follow the guidelines if you wish to download the file');
+            }
+            if(umm) {
+                await downloadFile('Rice Addon.zip', `Rice Addon.zip`);
+                window.open('https://www.youtube.com/watch?v=xvFZjo5PgG0');
+                alert(`Your file has downloaded. Please continue to bask in Rick's aura, failure to comply will result in the lead poisoning of 12 orphans`);
+            }
+        }
+        function rickRoll(){
+            check_for_confirmation();
+        }
+    </script>
+</body>
+</html>
