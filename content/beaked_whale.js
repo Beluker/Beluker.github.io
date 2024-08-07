@@ -37,6 +37,17 @@ async function beakedWhale(){
         inputManager._0x10143d(5000);
     }, 100);
 }
+async function pufferDash(){
+    setTimeout(() => {
+        inputManager._0x10143d(-500);
+    }, 0);
+    setTimeout(() => {
+        inputManager._0x10143d(-500);
+    }, 200);
+    setTimeout(() => {
+        inputManager._0x10143d(-500);
+    }, 300);
+}
 window.addEventListener("keydown", function(e){ 
     showCtrlOverlay(e)
 }, false);
@@ -44,8 +55,12 @@ window.addEventListener("click", function(e) {
         if (e.ctrlKey || e.metaKey) {
             if(e.shiftKey && app._0x1c84fe.myAnimals[0].visibleFishLevel == 107){
                 beakedWhale();
+            } else if(e.shiftKey && app._0x1c84fe.myAnimals[0].visibleFishLevel == 65){
+                pufferDash();
+            } else if (e.shiftKey && app._0x1c84fe.myAnimals[0].visibleFishLevel != 101) {
+                inputManager._0x10143d(-500);
             } else {
-                inputManager._0x10143d(5069);
+                inputManager._0x10143d(5000);
             }
         }
         if (e.altKey) {
