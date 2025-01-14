@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+    <link rel="manifest" href="../images/site.webmanifest">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiddly</title>
+    <style>
+        video {
+            width: 90%;
+            height: auto;
+        }
+        code {
+            background-color: rgb(32, 32, 32);
+            color: white;
+            padding: 2px;
+            border-radius: 5px;
+            font-size: smaller;
+        }
+        p {
+            line-height: 24px;
+            font-family: arial;
+        }
+        num {
+            color: grey;
+            font-size: smaller;
+            margin-left: 16px;
+            margin-right: 6px;
+        }
+        num_2 {
+            color: grey;
+            font-size: smaller;
+        }
+        h1 {
+            font-family: didot;
+        }
+        h4 {
+            color: grey;
+            font-family: didot;
+        }
+        div {
+            text-align: center;
+        }
+        p_2 {
+            font-size: 16px;;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>fiddly</h1>
+        <h4>An In-Depth Guide</h4>
+        <p>with <i>steps</i> & a <i>video</i></p>
+    </div>
+    <p_2>If you have never used inspector before, you might want to quickly go to the console and check if pasting is enabled, if not type <code>allow pasting</code></p_2>
+    <p>
+        <b>The steps go as follow:</b><br>
+        <num>1</num>open inspector<br>
+        <num>2</num>navigate to the <i>Sources</i> panel<br>
+        <num>3</num>look in the <i>Assets</i> folder, for the <i>index.a9ff7d61.js</i> file<br>
+        <num>4</num>press <b>ctrl + F</b> to open the search bar<br>
+        <num>5</num>paste <code>Tp.sendBytePacket(kr(Hc[e(305)], Xi[e(285)])),</code> into the search bar and press enter<br>
+        <num>6</num>you should see a highlighted line of code <br>
+        <num>7</num>hover over that line of code and press <b>ctrl + B</b>, or you can click the line to the left of the code as shown in the video<br>
+        <num>8</num>this should make a blue arrow appear pointing at the line of code<br>
+        <num>9</num>this is called a <i>breakpoint</i>, it will pause the code when we fail a dance as the fiddler crab<br>
+        <num>10</num>press the <b>Play</b> button<br>
+        <num>11</num> before choosing an animal, copy the following: <br> <code>
+            window.send = Tp.sendBytePacket;
+            window.squish = kr;
+            window.token = Hc.token;
+            window.magicNumber = 21;</code> <br>
+        <num>12</num>choose your animal and evolve to fiddler crab <br>
+        <num>13</num>go onto land and purposely fail a dance, this will trigger the breakpoint <br>
+        <num>14</num>the game will freeze, quickly navigate to the <i>Console</i> panel <br>
+        <num>15</num>paste the code from step <num_2>11</num_2> and press <b>enter</b> <br>
+        <num>16</num>unpause the game by pressing the blue play button <br>
+        <num>17</num>now copy <i>all</i> of the code from <a href="https://beluker.github.io/content/fiddly.js">fiddly.js</a><br>
+        <num>18</num>paste this into the <i>Console</i> and press enter<br>
+        <num>19</num>now, by holding the "F" key you automatically dance :)<br>
+        <num>20</num>enjoy the curse of immortality
+    </p>
+
+    <video src="fiddly.mov" controls>
+        browser does not support video tag or .mov files, one or the other
+    </video>
+</body>
+</html>
